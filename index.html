@@ -1,253 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oiko Plantas - Plantas y Macetas Artesanales</title>
-  <style>
-    :root {
-      --color-primary: #2d5a27;
-      --color-primary-dark: #1e3d1a;
-      --color-accent: #c68b59;
-      --color-bg: #f9f8f6;
-      --color-card-bg: #ffffff;
-      --color-text: #2c3531;
-      --color-muted: #666666;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oikoplantas - Estudio Botánico</title>
+    <style>
+        :root {
+            --color-bg: #FAF9F6;
+            --color-card: #FFFFFF;
+            --color-text: #2C3531;
+            --color-muted: #6B705C;
+            --color-accent: #3A5A40;
+            --color-accent-hover: #344E41;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
 
-    header {
-      background-color: #ffffff;
-      padding: 1rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        /* Encabezado Principal */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            background-color: var(--color-bg);
+        }
 
-    .brand {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
-    .hero {
-      padding: 3rem 1.5rem;
-      text-align: center;
-      background: linear-gradient(180deg, #ffffff 0%, var(--color-bg) 100%);
-    }
+        header p {
+            color: var(--color-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
 
-    .hero h1 {
-      font-size: 2.2rem;
-      color: var(--color-primary-dark);
-      margin-bottom: 0.8rem;
-    }
+        /* Filtros de Categoría */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
 
-    .hero p {
-      color: var(--color-muted);
-      max-width: 600px;
-      margin: 0 auto 1.5rem auto;
-      font-size: 1.05rem;
-    }
+        .cat-btn {
+            background: none;
+            border: 1px solid var(--color-muted);
+            color: var(--color-muted);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
 
-    .catalog {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
+        .cat-btn.active, .cat-btn:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #ffffff;
+        }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--color-primary);
-    }
+        /* Galería de Productos */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-    .card {
-      background: var(--color-card-bg);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-      display: flex;
-      flex-direction: column;
-    }
+        .card {
+            background: var(--color-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
+        .card:hover {
+            transform: translateY(-4px);
+        }
 
-    .card-content {
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
+        .card-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #EFEFEF;
+        }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-    }
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-    .card .description {
-      color: var(--color-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      flex-grow: 1;
-    }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
 
-    .price {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 1rem;
-    }
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--color-muted);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
 
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-direction: column;
-    }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
 
-    .btn {
-      display: inline-block;
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 6px;
-      text-align: center;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      font-size: 0.95rem;
-    }
+        .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
 
-    .btn-ws {
-      background-color: #25d366;
-      color: white;
-    }
+        .btn-ws {
+            background-color: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: background 0.2s ease;
+        }
 
-    .btn-mp {
-      background-color: #009ee3;
-      color: white;
-    }
+        .btn-ws:hover {
+            background-color: var(--color-accent-hover);
+        }
 
-    .floating-ws {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-decoration: none;
-      font-size: 1.8rem;
-      z-index: 1000;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      margin-top: 3rem;
-      background-color: #ffffff;
-      color: var(--color-muted);
-      font-size: 0.9rem;
-    }
-  </style>
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            border-top: 1px solid #EAEAEA;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <a href="#" class="brand">@oikoplantas</a>
-  </header>
+    <header>
+        <h1>Oikoplantas</h1>
+        <p>Estudio Botánico & Colección Vegetal</p>
+    </header>
 
-  <section class="hero">
-    <h1>Plantas y Macetas Artesanales</h1>
-    <p>Diseño, naturaleza y piezas hechas a mano para darle vida a tus espacios favoritos.</p>
-  </section>
-
-  <section class="catalog">
-    <h2 class="section-title">Catálogo de Productos</h2>
-    
-    <div class="grid">
-      <!-- Producto 1 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80" alt="Monstera Deliciosa">
-        <div class="card-content">
-          <h3>Monstera Deliciosa</h3>
-          <p class="description">Planta de interior con hojas grandes y caladas. Ideal para espacios con luz indirecta.</p>
-          <div class="price">$450 MXN</div>
-          <div class="btn-group">
-            <a href="https://wa.me/523300000000?text=Hola%20@oikoplantas,%20me%20interesa%20la%20Monstera%20Deliciosa" target="_blank" class="btn btn-ws">Pedir por WhatsApp</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 2 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=600&q=80" alt="Maceta Artesanal de Barro">
-        <div class="card-content">
-          <h3>Maceta Cilíndrica de Barro</h3>
-          <p class="description">Moldeada a mano por artesanos. Acabado natural poroso para mejor oxigenación del sustrato.</p>
-          <div class="price">$320 MXN</div>
-          <div class="btn-group">
-            <a href="https://wa.me/523300000000?text=Hola%20@oikoplantas,%20me%20interesa%20la%20Maceta%20Cil%C3%ADndrica%20de%20Barro" target="_blank" class="btn btn-ws">Pedir por WhatsApp</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&q=80" alt="Ficus Lyrata">
-        <div class="card-content">
-          <h3>Ficus Lyrata + Maceta</h3>
-          <p class="description">Set completo listo para decorar. Planta saludable acompañada de maceta artesanal.</p>
-          <div class="price">$680 MXN</div>
-          <div class="btn-group">
-            <a href="https://wa.me/523300000000?text=Hola%20@oikoplantas,%20me%20interesa%20el%20Set%20Ficus%20Lyrata" target="_blank" class="btn btn-ws">Pedir por WhatsApp</a>
-          </div>
-        </div>
-      </div>
+    <div class="categories">
+        <button class="cat-btn active">Todas</button>
+        <button class="cat-btn">Interior</button>
+        <button class="cat-btn">Exterior</button>
+        <button class="cat-btn">Macetas</button>
     </div>
-  </section>
 
-  <!-- Botón Flotante de WhatsApp -->
-  <a href="https://wa.me/523300000000?text=Hola%20@oikoplantas,%20tengo%20una%20consulta" class="floating-ws" target="_blank" aria-label="Contacto por WhatsApp">
-    💬
-  </a>
+    <main class="container">
+        <div class="grid">
+            
+            <!-- TARJETA 1 -->
+            <div class="card">
+                <img src="planta1.jpg" alt="Planta Oikoplantas" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600'">
+                <div class="card-body">
+                    <h3 class="card-title">Monstera Deliciosa</h3>
+                    <p class="card-desc">Ideal para interiores iluminados. Hojas grandes y de cuidados sencillos.</p>
+                    <div class="card-footer">
+                        <span class="price">$350 MXN</span>
+                        <a href="https://wa.me/5213300000000?text=Hola,%20me%20interesa%20la%20Monstera%20Deliciosa" class="btn-ws" target="_blank">Pedir</a>
+                    </div>
+                </div>
+            </div>
 
-  <footer>
-    <p>&copy; Oiko Plantas - Todos los derechos reservados.</p>
-    <p>Guadalajara / Zapopan, Jalisco</p>
-  </footer>
+            <!-- TARJETA 2 -->
+            <div class="card">
+                <img src="planta2.jpg" alt="Planta Oikoplantas" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1545241047-6083a3684587?w=600'">
+                <div class="card-body">
+                    <h3 class="card-title">Ficus Lyrata</h3>
+                    <p class="card-desc">Aporta elegancia a cualquier espacio. Requiere luz indirecta brillante.</p>
+                    <div class="card-footer">
+                        <span class="price">$480 MXN</span>
+                        <a href="https://wa.me/5213300000000?text=Hola,%20me%20interesa%20el%20Ficus%20Lyrata" class="btn-ws" target="_blank">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 3 -->
+            <div class="card">
+                <img src="planta3.jpg" alt="Planta Oikoplantas" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600'">
+                <div class="card-body">
+                    <h3 class="card-title">Maceta Cerámica Artesanal</h3>
+                    <p class="card-desc">Diseño minimalista hecho a mano con drenaje integrado.</p>
+                    <div class="card-footer">
+                        <span class="price">$220 MXN</span>
+                        <a href="https://wa.me/5213300000000?text=Hola,%20me%20interesa%20la%20Maceta%20Ceramica" class="btn-ws" target="_blank">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Oikoplantas — Guadalajara, Jal.</p>
+    </footer>
 
 </body>
 </html>
