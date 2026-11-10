@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oikoplantas - Estudio Botánico</title>
-    <!-- Fuentes Google: Playfair Display (elegante) y Plus Jakarta Sans (limpia) -->
+    <meta name="description" content="Oikoplantas - Vivero y Macetas en Zapopan y Guadalajara. Venta de plantas de sol, sombra, árboles ornamentales y macetas de barro, concreto, fibra de vidrio y plástico.">
+    <title>Oikoplantas - Vivero & Macetas</title>
+    <!-- Fuentes Google: Playfair Display y Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -85,7 +86,7 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         nav ul {
@@ -108,7 +109,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(28, 45, 36, 0.7), rgba(28, 45, 36, 0.7)), url('IMG_0776.jpeg') center/cover no-repeat;
+            background: linear-gradient(rgba(28, 45, 36, 0.75), rgba(28, 45, 36, 0.75)), url('IMG_0776.jpeg') center/cover no-repeat;
             color: #FFFFFF;
             text-align: center;
             padding: 110px 20px;
@@ -172,68 +173,20 @@
             font-size: 1rem;
         }
 
-        /* Servicios / Qué Ofrecemos */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 28px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 35px 28px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .service-card h4 {
+        .sub-header-title {
             color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 14px;
+            font-size: 1.6rem;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.92rem;
-        }
-
-        /* Catálogo de Productos */
-        .categories-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 45px;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 1px solid var(--border);
-            padding: 8px 22px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.88rem;
-            font-family: var(--font-body);
-            color: var(--text-light);
-            transition: all 0.2s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            color: #FFFFFF;
-            border-color: var(--primary);
-        }
-
+        /* Catálogo Grid */
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
         }
 
         .plant-card {
@@ -244,10 +197,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
         }
 
         .plant-info {
-            padding: 30px 25px 20px;
+            padding: 28px 22px 18px;
             text-align: center;
         }
 
@@ -257,20 +216,20 @@
             letter-spacing: 1.5px;
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: block;
         }
 
         .plant-info h4 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .plant-info p {
             color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.92rem;
+            margin-bottom: 15px;
         }
 
         .whatsapp-btn {
@@ -290,7 +249,33 @@
             background-color: var(--primary);
         }
 
-        /* Sección Empresa */
+        /* Servicios Vivero */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .service-card h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Empresa */
         .company-section {
             background-color: var(--card-bg);
             border-top: 1px solid var(--border);
@@ -369,15 +354,15 @@
                 <img src="IMG_0776.jpeg" alt="Oikoplantas Logo" class="logo-img">
                 <div class="logo-text">
                     <h1>Oikoplantas</h1>
-                    <span>Estudio Botánico</span>
+                    <span>Vivero & Macetas</span>
                 </div>
             </a>
             <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
-                    <li><a href="#empresa">Nosotros</a></li>
+                    <li><a href="#plantas">Plantas</a></li>
+                    <li><a href="#arboles">Árboles</a></li>
+                    <li><a href="#macetas">Macetas</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -387,105 +372,260 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio" style="margin: 0; max-width: 100%;">
         <div class="hero-content">
-            <h2>Armonía natural & diseño botánico para tus espacios</h2>
-            <p>Producción, selección curada y colección vegetal de calidad superior.</p>
-            <a href="#catalogo" class="btn">Explorar Catálogo</a>
+            <h2>Vivero & Macetas de Alta Calidad</h2>
+            <p>Variedad en plantas de sol y sombra, árboles ornamentales y catálogo de macetas para tus proyectos de jardinería.</p>
+            <a href="#plantas" class="btn">Ver Catálogo Completo</a>
         </div>
     </section>
 
-    <!-- Qué Ofrecemos -->
-    <section id="servicios">
+    <!-- SECCIÓN 1: PLANTAS (Sol y Sombra) -->
+    <section id="plantas">
         <div class="section-title">
-            <h3>Nuestros Servicios</h3>
-            <p>Soluciones integrales de jardinería y paisajismo</p>
+            <h3>Nuestras Plantas</h3>
+            <p>Selección especializada para interiores y exteriores</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h4>Asesoría Botánica</h4>
-                <p>Te guiamos en la selección de ejemplares ideales según la luz y condiciones de tu espacio.</p>
+
+        <!-- Subsección Sol -->
+        <h4 class="sub-header-title">Plantas de Sol</h4>
+        <div class="catalog-grid">
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sol Directo</span>
+                    <h4>Bugambilia</h4>
+                    <p>Planta trepadora de floración abundante y gran resistencia en exteriores.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20la%20Bugambilia" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
             </div>
-            <div class="service-card">
-                <h4>Diseño & Vanguardia</h4>
-                <p>Tendencias en flora ornamental, colecciones únicas y composiciones de diseño vegetal.</p>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sol Directo</span>
+                    <h4>Duranta Golden</h4>
+                    <p>Follaje amarillo brillante ideal para cercos vivos, borduras o macetas al exterior.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20la%20Duranta%20Golden" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
             </div>
-            <div class="service-card">
-                <h4>Entrega a Domicilio</h4>
-                <p>Envíos especializados cuidando la integridad de cada espécimen hasta su entrega.</p>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sol Directo / Aromática</span>
+                    <h4>Romero</h4>
+                    <p>Planta aromática medicinal y culinaria, excelente resistencia y bajo consumo de agua.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20Romero" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
             </div>
-            <div class="service-card">
-                <h4>Mantenimiento</h4>
-                <p>Planes y recomendaciones para mantener la vitalidad y belleza de tu jardín.</p>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sol Directo / Aromática</span>
+                    <h4>Lavanda</h4>
+                    <p>Aromática de flores moradas vibrantes, atrae polinizadores y soporta bien el sol directo.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20la%20Lavanda" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sol Directo</span>
+                    <h4>Obelisco (Hibiscus)</h4>
+                    <p>Arbusto floral de colores intensos, perfecto para darle vida a jardines y terrazas.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20Obelisco" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subsección Sombra -->
+        <h4 class="sub-header-title">Plantas de Sombra</h4>
+        <div class="catalog-grid">
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sombra / Interior</span>
+                    <h4>Monstera Deliciosa</h4>
+                    <p>Hojas anchas y perforadas, ideal para interiores bien iluminados o terrazas techadas.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20la%20Monstera%20Deliciosa" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Sombra / Interior</span>
+                    <h4>Ficus Lyrata</h4>
+                    <p>Elegante silueta vertical con hojas en forma de violín, ideal para espacios interiores.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20Ficus%20Lyrata" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Media Sombra</span>
+                    <h4>Teléfono / Pothos</h4>
+                    <p>Planta colgante de rápido crecimiento y muy fácil cuidado en cualquier rincón del hogar.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20Teléfono" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Catálogo -->
-    <section id="catalogo" style="background-color: var(--bg);">
+    <!-- SECCIÓN 2: ÁRBOLES -->
+    <section id="arboles" style="background-color: #F1EFE8;">
         <div class="section-title">
-            <h3>Colección Vegetal</h3>
-            <p>Explora nuestras especies destacadas</p>
-        </div>
-
-        <div class="categories-filter">
-            <button class="filter-btn active">Todos</button>
-            <button class="filter-btn">Plantas de Sombra</button>
-            <button class="filter-btn">Árboles & Exterior</button>
-            <button class="filter-btn">Colección Especial</button>
+            <h3>Catálogo de Árboles</h3>
+            <p>Especies florales y ornamentales para banquetas, jardines y proyectos de paisajismo</p>
         </div>
 
         <div class="catalog-grid">
-            <!-- Planta 1 -->
             <div class="plant-card">
                 <div class="plant-info">
-                    <span class="plant-tag">Exterior / Paisajismo</span>
+                    <span class="plant-tag">Árbol Ornamental</span>
+                    <h4>Lluvia de Oro</h4>
+                    <p>Destaca por sus espectaculares racimos de flores amarillas colgantes durante la primavera.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20árbol%20Lluvia%20de%20Oro" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Árbol Ornamental</span>
+                    <h4>Tabachín</h4>
+                    <p>Árbol de copa ancha y vistosa floración en tonos rojos y anaranjados brillantes.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20Tabachín" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Árbol Compacto / Macetón</span>
                     <h4>Tabachín Enano</h4>
-                    <p>Ideal para jardines, terrazas y paisajismo en miniatura con hermosa floración rojiza.</p>
+                    <p>Versión compacta perfecta para jardines reducidos, banquetas o macetones grandes.</p>
                 </div>
-                <div style="padding: 0 25px 25px;">
-                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20saber%20más%20sobre%20el%20Tabachín%20Enano" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- Planta 2 -->
-            <div class="plant-card">
-                <div class="plant-info">
-                    <span class="plant-tag">Interior</span>
-                    <h4>Monstera Deliciosa</h4>
-                    <p>Planta de hojas grandes y perforadas, perfecta para darle personalidad a interiores.</p>
-                </div>
-                <div style="padding: 0 25px 25px;">
-                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20saber%20más%20sobre%20la%20Monstera%20Deliciosa" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20Tabachín%20Enano" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
                 </div>
             </div>
 
-            <!-- Planta 3 -->
             <div class="plant-card">
                 <div class="plant-info">
-                    <span class="plant-tag">Colección</span>
-                    <h4>Ficus Lyrata</h4>
-                    <p>Silueta vertical y hojas en forma de violín, óptima para espacios con luz indirecta.</p>
+                    <span class="plant-tag">Árbol Ornamental</span>
+                    <h4>Jacaranda</h4>
+                    <p>Clásico árbol urbano de deslumbrante floración lila/violeta durante la primavera.</p>
                 </div>
-                <div style="padding: 0 25px 25px;">
-                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20saber%20más%20sobre%20el%20Ficus%20Lyrata" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20la%20Jacaranda" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Árbol Ornamental</span>
+                    <h4>Majahua</h4>
+                    <p>Árbol de amplio follaje verde y flores cambiantes, excelente para sombra en jardines.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20la%20Majahua" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Árbol Ornamental</span>
+                    <h4>Primavera</h4>
+                    <p>Árbol nativo famoso por cubrirse por completo de flores amarillas deslumbrantes.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20el%20árbol%20Primavera" class="whatsapp-btn" target="_blank">Consultar por WhatsApp</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Empresa -->
+    <!-- SECCIÓN 3: MACETAS -->
+    <section id="macetas">
+        <div class="section-title">
+            <h3>Catálogo de Macetas</h3>
+            <p>Diferentes materiales, tamaños y acabados para cada estilo de decoración</p>
+        </div>
+
+        <div class="catalog-grid">
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Artesanal / Rústico</span>
+                    <h4>Macetas de Barro</h4>
+                    <p>Excelente porosidad para la salud de las raíces, acabado natural tradicional o pigmentado.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20Macetas%20de%20Barro" class="whatsapp-btn" target="_blank">Consultar Disponibilidad</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Moderno / Minimalista</span>
+                    <h4>Macetas de Concreto</h4>
+                    <p>Diseño industrial sobrio, ideales para exteriores, terrazas y plantas de gran tamaño.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20Macetas%20de%20Concreto" class="whatsapp-btn" target="_blank">Consultar Disponibilidad</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Ligero / Premium</span>
+                    <h4>Macetas de Fibra de Vidrio</h4>
+                    <p>Resistentes a la intemperie, ultra ligeras y con acabados lisos de alta durabilidad.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20Macetas%20de%20Fibra%20de%20Vidrio" class="whatsapp-btn" target="_blank">Consultar Disponibilidad</a>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-info">
+                    <span class="plant-tag">Versátil / Práctico</span>
+                    <h4>Macetas de Plástico</h4>
+                    <p>Ligeras, económicas y disponibles en múltiples formas y colores para uso diario.</p>
+                </div>
+                <div style="padding: 0 22px 22px;">
+                    <a href="https://wa.me/?text=Hola,%20me%20interesa%20consultar%20sobre%20Macetas%20de%20Plástico" class="whatsapp-btn" target="_blank">Consultar Disponibilidad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros / Vivero -->
     <section class="company-section" id="empresa">
         <div class="company-grid">
             <div class="company-box">
-                <h4>Misión</h4>
-                <p>Generar espacios vivos y armónicos a través de plantas seleccionadas con rigurosidad botánica y estética.</p>
+                <h4>Nuestra Misión</h4>
+                <p>Proveer plantas sanas, árboles ornamentales y macetas de la mejor calidad para embellecer cualquier espacio en tu hogar o proyecto.</p>
             </div>
             <div class="company-box">
-                <h4>Visión</h4>
-                <p>Ser la referencia en diseño botánico y provisión de ejemplares de ornato en la región.</p>
+                <h4>Nuestra Visión</h4>
+                <p>Posicionarnos como el vivero de confianza en la zona metropolitana ofreciendo atención personalizada y variedad de ejemplares.</p>
             </div>
             <div class="company-box">
-                <h4>Valores</h4>
-                <p>Excelencia, honestidad, pasión por la naturaleza, innovación y servicio personalizado.</p>
+                <h4>Atención a Proyectos</h4>
+                <p>Surtimos pedidos tanto para clientes particulares como para diseñadores de jardines y proyectos de paisajismo.</p>
             </div>
         </div>
     </section>
@@ -493,30 +633,28 @@
     <!-- Contacto -->
     <section id="contacto">
         <div class="section-title">
-            <h3>Contacto</h3>
-            <p>Estamos para orientarte en tu próximo proyecto verde</p>
+            <h3>Contacto & Pedidos</h3>
+            <p>Visítanos en el vivero o solicita tu cotización directa</p>
         </div>
         <div class="contact-container">
             <div class="contact-info">
-                <h4>Oikoplantas</h4>
+                <h4>Oikoplantas - Vivero & Macetas</h4>
                 <p><strong>Ubicación:</strong> Zapopan / Guadalajara, Jalisco, México.</p>
                 <p><strong>Correo:</strong> info@oikoplantas.com</p>
                 <p><strong>Horario:</strong> Lunes a Sábado de 9:00 a 18:00 hrs</p>
-                <a href="https://wa.me/" class="btn" style="width: 100%; text-align: center; margin-top: 15px;" target="_blank">Mensaje Directo</a>
+                <a href="https://wa.me/" class="btn" style="width: 100%; text-align: center; margin-top: 15px;" target="_blank">Enviar Mensaje por WhatsApp</a>
             </div>
             <div class="contact-info">
-                <h4>Atención Personalizada</h4>
-                <p>Si buscas una especie en particular o requieres cotización para un proyecto residencial o comercial, escríbenos directamente por WhatsApp.</p>
+                <h4>Atención Directa</h4>
+                <p>¿Buscas una medida especial de maceta o una cantidad específica de árboles o plantas? Contáctanos directamente por WhatsApp para brindarte existencias y precios al momento.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Oikoplantas - Estudio Botánico. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Oikoplantas - Vivero y Macetas. Todos los derechos reservados.</p>
     </footer>
 
 </body>
 </html>
-
-
